@@ -149,26 +149,31 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 function removeItem(myGroceryList, rvItem){
+  if (arguments.length === 0){
+    return [];
+  } else {
+
+
   for (var i = 0; i < myGroceryList.length; i++) {
-    if (arguments.length === 0){
-      return [];
-    }
-    else if (myGroceryList[i] === rvItem) {
+
+  if (myGroceryList[i] === rvItem) {
       myGroceryList.splice(i, 1)
     }
   }
+
   return myGroceryList;
+}
 }
 
 function addItem(myGroceryList, add) {
-  if (myGroceryList.indexOf(add) === -1) {
+  if (arguments.length === 0){
+    return [];
+  }
+  else if (myGroceryList.indexOf(add) === -1) {
     myGroceryList.push(add);
     return myGroceryList;
-    if (arguments.length === 0){
-      return [];
-    }
+
   }
-  return myGroceryList;
 }
 
 //removeItem(myGroceryList, 'chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
@@ -243,11 +248,11 @@ function both(arr1, arr2){
   for (var i = 0; i < arr1.length; i++) {
     for (var y = 0; y < arr2.length; y++) {
       if (arr1[i] === arr2[y]) {
-      newArr.push(i);
+      newArr.push(arr1[i]);
     }
     }
   }
-    return arr1;
+    return newArr;
 }
 
 
@@ -288,13 +293,18 @@ var colt = {
 array with those four objects. After that console.log the length of the Array and make
 sure that it's equal to 4. */
 
-  //Code Here
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 /*Now let's say Cahlan has a mental breakdown and has to take a leave of absence to 'find himself'.
 Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
 
-  //Code Here
 
+  for (var i = 0; i < devMountainEmployees.length; i++) {
+    if (devMountainEmployees[i] === cahlan){
+      devMountainEmployees.splice(i, 1);
+    }
+  }
 
 
 
@@ -335,7 +345,7 @@ of Data is to have an Array full of objects. */
 
 //Create an empty array called users.
 
-  //Code Here
+var users = [];
 
 /*Now add three user objects to your users array. Each user object should contain the
 following properties. name, email, password, username.*/
@@ -343,12 +353,23 @@ following properties. name, email, password, username.*/
 //include this as one of the objects in your array.
 var user1 = {
     name: 'Tyler McGinnis',
-    email: 'tylermcginnis33@gmail.com',
+    email: 'tylemail.com',
     password: 'iLoveJavaScript',
     username: 'infiniateLoop'
 };
-
-//Your Code Here
+var user2 = {
+    name: 'Tyler poop',
+    email: 'tylermcgidf33@gmail.com',
+    password: 'iLoaScript',
+    username: 'infoop'
+};
+var user3 = {
+    name: 'judeth McGrangunnis',
+    email: 'tylermcgail.com',
+    password: 'iLovdfaScript',
+    username: 'infidfveLoop'
+};
+users.push(user1, user2, user3);
 
 /*Now you have a very common data structure. Twitter is a good use case.
 It's easy to imagine that your followers list on Twitter is an Array full or objects
@@ -358,6 +379,13 @@ and those objects contain properties about the specific person you follow.*/
 objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
 Once you find the particular index he's located in, delete him from the array.*/
 
-  //Code Here
-
+function byeTy(){
+  for (var i = 0; i < users.length; i++) {
+    if(users[i].email === 'tylemail.com'){
+      users.splice(i, 1);
+    }
+  }
+  return users;
+}
+byeTy();
 //The activity we just did is very much how data works in 'the real world'.
